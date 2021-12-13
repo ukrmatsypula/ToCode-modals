@@ -5,19 +5,18 @@
         <section>
           <div class="container">
             <Modal
-              v-if="modalFirst"
+              v-show="modalFirst"
               title="First modal"
               @close="modalFirst = !modalFirst"
             >
-            
-            <div slot="body">
-              <p>Text </p>
-              <button>Well done</button>
-            </div>
-            <div slot="footer">
-              <p>Default footer </p>
-              <button>Well done</button>
-            </div>
+              <div slot="body">
+                <p>Text</p>
+                <button>Well done</button>
+              </div>
+              <div slot="footer">
+                <p>Default footer</p>
+                <button>Well done</button>
+              </div>
             </Modal>
 
             <button
