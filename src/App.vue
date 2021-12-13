@@ -81,6 +81,19 @@
             >
               show second modal
             </button>
+
+            <button
+              @click="modalValidate = true"
+              class="btn btnPrimary"
+              @keydown.esc="modalValidate = false"
+            >
+              show modal + validate
+            </button>
+
+            <ModalValidate
+              v-show="modalValidate"
+              @closeValidateModal="modalValidate = false"
+            />
           </div>
         </section>
       </div>
@@ -89,12 +102,14 @@
 </template>
 
 <script>
-import Modal from "./components/Modal";
+import Modal from "@/components/Modal";
+import ModalValidate from "@/components/ModalValidate";
 
 export default {
   name: "App",
   components: {
     Modal,
+    ModalValidate,
   },
   data: () => ({
     modalFirst: false,
@@ -103,6 +118,7 @@ export default {
       name: "",
       email: "",
     },
+    modalValidate: false,
   }),
   methods: {
     submitSecondForm() {
