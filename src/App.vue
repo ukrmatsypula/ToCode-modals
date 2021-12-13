@@ -1,6 +1,22 @@
 <template>
   <div id="app">
-    <Modal />
+    <div class="wrapper">
+      <div class="wrapper-content">
+        <section>
+          <div class="container">
+            <Modal
+              v-if="modalFirst"
+              title="First modal"
+              @close="modalFirst = !modalFirst"
+            ></Modal>
+
+            <button @click="modalFirst = !modalFirst" class="btn btnPrimary">
+              show first modal
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,16 +28,8 @@ export default {
   components: {
     Modal,
   },
+  data: () => ({
+    modalFirst: false,
+  }),
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
