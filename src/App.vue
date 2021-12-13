@@ -10,7 +10,11 @@
               @close="modalFirst = !modalFirst"
             ></Modal>
 
-            <button @click="modalFirst = !modalFirst" class="btn btnPrimary">
+            <button
+              @click="modalFirst = !modalFirst"
+              class="btn btnPrimary"
+              @keydown.esc="modalFirst = !modalFirst"
+            >
               show first modal
             </button>
           </div>
