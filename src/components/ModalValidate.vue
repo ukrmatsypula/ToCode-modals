@@ -17,7 +17,10 @@
           />
         </div>
 
-        <div class="form-item" :class="{ errorEmail: $v.email.$error }">
+        <div class="form-item" :class="{ errorInput: $v.email.$error }">
+          <label for="name">Email</label>
+          <p class="error-text" v-if="!$v.email.required">Field is required</p>
+          <p class="error-text" v-if="!$v.email.email">Email is not correct</p>
           <label for="email">Email</label>
           <input id="email" placeholder="email" v-model="email" />
         </div>
